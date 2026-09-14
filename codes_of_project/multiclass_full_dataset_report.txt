@@ -1,0 +1,52 @@
+MULTICLASS FULL DATASET EVALUATION - F:\all_10_csv_manual\merged_final.csv
+Total rows evaluated: 11831510
+Accuracy: 0.9998
+Macro F1: 0.8595   Weighted F1: 0.9998
+
+Per-attack-type detection (sorted worst -> best by recall):
+                   label    total  detected_correctly  missed  precision  recall     f1
+DoS attacks-SlowHTTPTest      107                  50      57     0.6494  0.4673 0.5435
+          FTP-BruteForce       53                  30      23     0.3226  0.5660 0.4110
+           SQL Injection       85                  81       4     0.7364  0.9529 0.8308
+        Brute Force -Web      570                 554      16     0.1902  0.9719 0.3181
+        Brute Force -XSS      229                 225       4     0.9298  0.9825 0.9554
+    DDOS attack-LOIC-UDP     1730                1721       9     0.9550  0.9948 0.9745
+                  Benign 10584581            10582110    2471     1.0000  0.9998 0.9999
+  DDoS attacks-LOIC-HTTP   575364              575281      83     0.9999  0.9999 0.9999
+          SSH-Bruteforce    94048               94041       7     1.0000  0.9999 1.0000
+   DoS attacks-GoldenEye    41406               41405       1     0.9999  1.0000 0.9999
+                     Bot   144535              144533       2     0.9999  1.0000 1.0000
+        DDOS attack-HOIC   198861              198861       0     1.0000  1.0000 1.0000
+   DoS attacks-Slowloris     9908                9908       0     0.9998  1.0000 0.9999
+        DoS attacks-Hulk   180033              180033       0     1.0000  1.0000 1.0000
+
+Confusion Matrix (rows=actual, cols=predicted):
+Order: ['Benign', 'Bot', 'Brute Force -Web', 'Brute Force -XSS', 'DDOS attack-HOIC', 'DDOS attack-LOIC-UDP', 'DDoS attacks-LOIC-HTTP', 'DoS attacks-GoldenEye', 'DoS attacks-Hulk', 'DoS attacks-SlowHTTPTest', 'DoS attacks-Slowloris', 'FTP-BruteForce', 'SQL Injection', 'SSH-Bruteforce']
+[[10582110        8     2355       17        0        0       60        4
+         1        1        2        2       19        2]
+ [       2   144533        0        0        0        0        0        0
+         0        0        0        0        0        0]
+ [       7        0      554        0        0        0        0        0
+         0        0        0        0        9        0]
+ [       1        0        2      225        0        0        0        0
+         0        0        0        0        1        0]
+ [       0        0        0        0   198861        0        0        0
+         0        0        0        0        0        0]
+ [       0        0        0        0        0     1721        9        0
+         0        0        0        0        0        0]
+ [       2        0        0        0        0       81   575281        0
+         0        0        0        0        0        0]
+ [       0        0        0        0        0        0        0    41405
+         1        0        0        0        0        0]
+ [       0        0        0        0        0        0        0        0
+    180033        0        0        0        0        0]
+ [       0        0        0        0        0        0        0        0
+         0       50        0       57        0        0]
+ [       0        0        0        0        0        0        0        0
+         0        0     9908        0        0        0]
+ [       0        0        0        0        0        0        0        0
+         0       23        0       30        0        0]
+ [       2        0        2        0        0        0        0        0
+         0        0        0        0       81        0]
+ [       0        0        0        0        0        0        0        0
+         0        3        0        4        0    94041]]
